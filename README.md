@@ -8,7 +8,7 @@ service. Note, the file is not stored in persistent storage by the service.
 
 An instance of the service is available at
 
-> https://filemetadata-jm.herukoapp.com
+> https://filemetadata-jm.herokuapp.com
 
 Using the service to select a file, the result of the upload is a JSON message,
 status 200, with the format
