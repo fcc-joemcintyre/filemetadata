@@ -18,5 +18,35 @@ status 200, with the format
       "size": 145324
     }
 
+## Package Scripts
+
+The following scripts are defined in this package
+
+Run unit tests
+
+```
+npm test
+```
+
+Start local server instance
+
+```
+npm start
+```
+
+Run ESLint against lib and test directories
+
+```
+npm run lint
+```
+
+Check types using Typescript compiler (type checking mode only). Note, this will
+use the globally installed Typescript package. If not installed, it can be installed
+using: *npm i -g typescript*
+
+```
+npm run typecheck
+```
+
 ## License
 MIT
