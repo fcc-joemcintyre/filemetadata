@@ -4,7 +4,7 @@ import { processCommand } from '../lib/cmd.js';
 import { start, stop } from '../lib/server.js';
 
 before (async function () {
-  await start (3000);
+  await start ('0.0.0.0', 3000);
 });
 
 after (async function () {
