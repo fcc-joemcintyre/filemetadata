@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "fastify": "3.17.0",
-    "fastify-multipart": "4.0.6"
+    "fastify-multipart": "5.3.1"
   },
   "scripts": {
     "test": "mocha ./test/test.js",
