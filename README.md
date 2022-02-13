@@ -1,7 +1,5 @@
 # File Metadata Service
 
-[![Build Status](https://travis-ci.org/fcc-joemcintyre/filemetadata.svg?branch=master)](https://travis-ci.org/fcc-joemcintyre/filemetadata)
-
 This service returns a JSON object containing the size of a file uploaded. A
 file selection function is provided to select and upload a file to the
 service. Note, the file is not stored in persistent storage by the service.
