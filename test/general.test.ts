@@ -1,7 +1,7 @@
 import assert from 'assert';
 import fetch from 'node-fetch';
-import { processCommand } from '../lib/cmd.js';
-import { start, stop } from '../lib/server.js';
+import { processCommand } from '../src/cmd.js';
+import { start, stop } from '../src/server.js';
 
 before (async function () {
   await start ('0.0.0.0', 3000);

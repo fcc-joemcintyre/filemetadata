@@ -1,17 +1,16 @@
-import fastify from 'fastify';
+import fastify, { FastifyInstance } from 'fastify';
 import multipart from 'fastify-multipart';
 import { homepage } from './homepage.js';
 import { upload } from './listener.js';
 
-let server;
+let server: FastifyInstance | undefined;
 
 /**
  * Start the server.
- * @param {string} host HTTP host to listen to
- * @param {number} port HTTP port to listen to
- * @returns {void}
+ * @param host HTTP host to listen to
+ * @param port HTTP port to listen to
  */
-export function start (host, port) {
+export function start (host: string, port: number) {
   console.log ('Starting File Metadata server');
 
   // initialize and start server
@@ -37,7 +36,6 @@ export function start (host, port) {
 
 /**
  * Stop the server
- * @returns {Promise<void>}
  */
 export async function stop () {
   if (server) {

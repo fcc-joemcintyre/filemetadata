@@ -1,15 +1,11 @@
-/**
-  @typedef {import ('fastify').FastifyRequest} Request
-  @typedef {import ('fastify').FastifyReply} Response
- */
+import { FastifyReply, FastifyRequest } from 'fastify';
 
 /**
  * Receive file and return size
- * @param {Request} req HTTP request
- * @param {Response} res HTTP response
- * @returns {Promise<void>}
+ * @param req HTTP request
+ * @param res HTTP response
  */
-export async function upload (req, res) {
+export async function upload (req: FastifyRequest, res: FastifyReply) {
   try {
     const file = await req.file ();
     try {
