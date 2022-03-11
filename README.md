@@ -20,10 +20,16 @@ status 200, with the format
 
 The following scripts are defined in this package
 
-Run unit tests
+Run unit and Postman tests
 
 ```
 npm test
+```
+
+Build
+
+```
+npm run build
 ```
 
 Start local server instance

@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "8be0ef1b-543a-4126-8607-fa72d80bb193",
+		"name": "filemetadata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test ('status to be 200', () => {",
+							"    pm.response.to.have.status (200);",
+							"})",
+							"",
+							"pm.test ('HTML content to be home page', () => {",
+							"    var text = '<h1>File Metadata Service</h1>';",
+							"    var data = pm.response.text ();",
+							"    pm.expect (data.startsWith (text)).to.eq (true);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/Users/joe/dev/fcc/filemetadata/postman/testfile-1.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test ('status to be 200', () => {",
+							"    pm.response.to.have.status (200);",
+							"})",
+							"",
+							"pm.test ('HTML content to be home page', () => {",
+							"    var text = '<h1>File Metadata Service</h1>';",
+							"    var data = pm.response.text ();",
+							"    pm.expect (data.startsWith (text)).to.eq (true);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/Users/joe/dev/fcc/filemetadata/postman/testfile-1.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/notapage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notapage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invalid api URI",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test ('status to be 200', () => {",
+							"    pm.response.to.have.status (200);",
+							"})",
+							"",
+							"pm.test ('HTML content to be home page', () => {",
+							"    var text = '<h1>File Metadata Service</h1>';",
+							"    var data = pm.response.text ();",
+							"    pm.expect (data.startsWith (text)).to.eq (true);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/Users/joe/dev/fcc/filemetadata/postman/testfile-1.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/not",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"not"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "File upload",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test ('status to be 200', () => {",
+							"    pm.response.to.have.status (200);",
+							"})",
+							"",
+							"pm.test ('size to be 32', () => {",
+							"    var data = pm.response.json ();",
+							"    pm.expect (data.filename).to.eq ('testfile-1.txt');",
+							"    pm.expect (data.size).to.eq (32);",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/Users/joe/dev/fcc/filemetadata/postman/testfile-1.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"file"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

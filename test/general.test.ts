@@ -1,41 +1,5 @@
 import assert from 'assert';
-import fetch from 'node-fetch';
 import { processCommand } from '../src/cmd.js';
-import { start, stop } from '../src/server.js';
-
-before (async function () {
-  await start ('0.0.0.0', 3000);
-});
-
-after (async function () {
-  await stop ();
-});
-
-describe ('test server', function () {
-  describe ('/', function () {
-    it ('should return 200 with form', async function () {
-      const res = await fetch ('http://localhost:3000/');
-      if (res.status === 200) {
-        const body = await res.text ();
-        assert (body.startsWith ('<h1>File Metadata Service</h1>'));
-      } else {
-        assert (false);
-      }
-    });
-  });
-
-  describe ('invalid URL content', function () {
-    it ('should return 200 with form', async function () {
-      const res = await fetch ('http://localhost:3000/dummy');
-      if (res.status === 200) {
-        const body = await res.text ();
-        assert (body.startsWith ('<h1>File Metadata Service</h1>'));
-      } else {
-        assert (false);
-      }
-    });
-  });
-});
 
 describe ('cmd', function () {
   describe ('empty command', function () {
