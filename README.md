@@ -26,6 +26,12 @@ Run unit and Postman tests
 npm test
 ```
 
+Typecheck
+
+```
+npm run typecheck
+```
+
 Build
 
 ```
