@@ -1,5 +1,5 @@
 import fastify, { FastifyInstance } from 'fastify';
-import multipart from 'fastify-multipart';
+import multipart from '@fastify/multipart';
 import { homepage } from './homepage.js';
 import { upload } from './listener.js';
 
@@ -29,7 +29,7 @@ export function start (host: string, port: number) {
   server.get ('*', {}, (req, res) => { res.type ('text/html').send (homepage); });
   server.post ('/api/file', {}, upload);
 
-  server.listen (port, host, () => {
+  server.listen ({ port, host }, () => {
     console.log (`File Metadata server listening on port ${port}`);
   });
 }
