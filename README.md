@@ -20,10 +20,10 @@ status 200, with the format
 
 The following scripts are defined in this package
 
-Run unit and Postman tests
+Run ESLint against lib and test directories
 
 ```
-npm test
+npm run lint
 ```
 
 Typecheck
@@ -32,22 +32,28 @@ Typecheck
 npm run typecheck
 ```
 
+Run unit and Postman tests
+
+```
+npm test
+```
+
 Build
 
 ```
 npm run build
 ```
 
-Start local server instance
+Start local server instance for development
 
 ```
-npm start
+npm run dev
 ```
 
-Run ESLint against lib and test directories
+Start production server
 
 ```
-npm run lint
+npm run start
 ```
 
 ## License
