@@ -20,6 +20,30 @@ status 200, with the format
 
 The following scripts are defined in this package
 
+*Development Build and Run (use in separate terminals)*
+
+```
+npm run dev:build
+```
+
+```
+npm run dev:start
+```
+
+*Production Build and Run*
+
+Build
+
+```
+npm run build
+```
+
+```
+npm run start
+```
+
+*Other commands*
+
 Run ESLint against lib and test directories
 
 ```
@@ -36,24 +60,6 @@ Run unit and Postman tests
 
 ```
 npm test
-```
-
-Build
-
-```
-npm run build
-```
-
-Start local server instance for development
-
-```
-npm run dev
-```
-
-Start production server
-
-```
-npm run start
 ```
 
 ## License
