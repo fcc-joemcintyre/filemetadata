@@ -8,15 +8,21 @@ import { FastifyReply, FastifyRequest } from 'fastify';
 export async function upload (req: FastifyRequest, res: FastifyReply) {
   try {
     const file = await req.file ();
-    try {
-      const data = await file.toBuffer ();
-      res.code (200).send ({
-        filename: file.filename,
-        size: data.length,
-      });
-    } catch {
-      res.code (400).send ({
-        error: 'Submitted file too large (max 1 megabyte)',
+    if (file) {
+      try {
+        const data = await file.toBuffer ();
+        res.code (200).send ({
+          filename: file.filename,
+          size: data.length,
+        });
+      } catch {
+        res.code (400).send ({
+          error: 'Submitted file too large (max 1 megabyte)',
+        });
+      }
+    } else {
+      res.code (404).send ({
+        error: 'No file specified',
       });
     }
   } catch (err) {
